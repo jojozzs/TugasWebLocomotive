@@ -1,40 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js">
-</script>
-<link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
-" rel="stylesheet">
+
+<body data-scroll-container>
 
 
-<section class= "navbar">
-    <ul class="navbar-links-list">
-        <li class="navbar-list-item">
-            <p class="navbar-item">WORK</p>
-        </li>
-        <li class="navbar-list-item"></li>
+    <section class="navbar">
+        <ul class="navbar-links-list">
+            <li class="navbar-list-item">
+                <p class="navbar-item">WORK</p>
+            </li>
+            <li class="navbar-list-item"></li>
             <p class="navbar-item">ABOUT </p>
-        </li>
-        <li class="navbar-list-item"></li>
+            </li>
+            <li class="navbar-list-item"></li>
             <p class="navbar-item">CONTACT</p>
-        </li>
-    </ul>
-</section>
+            </li>
+        </ul>
+    </section>
 
-<section class = "hero">
-<div class="container-left">
-    <h1 class = "hero-text">HI, I'M JOJONG</h1>
-</div>
-<div class="container-right">
-    <div class="hero-image">
-        <img class= "gamkom" src="" alr="gamkos">
-    </div>
-</div>
-</section>
+    <section class="hero" data-scroll-container>
+        <div class="container-left" data-scroll-container>
+            <h1 class="hero-text" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">HI, I'M JOJONG
+            </h1>
+        </div>
+        <div class="container-right" data-scroll-container>
+            <div class="hero-image" data-scroll-container>
+                <img class="gamkom" src="Aset/unsplash_Z53V6HVQ0v8.jpg" alr="gamkos" data-scroll data-scroll-speed="2">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" data-scroll-container>
+        <div class="main-about" data-scroll-container>
+            <h1 class="about-title" data-scroll data-scroll-speed="2">About</h1>
+            <p class="about-isi" data-scroll data-scroll-speed="2">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Doloribus reiciendis aspernatur deleniti sunt tempore? Est quod, corrupti illum quia temporibus
+                dolorum, laboriosam qui adipisci dolore, repudiandae iste animi eius similique.</p>
+        </div>
+    </section>
+
+    <section id="work" data-scroll-container>
+        <div class="main-work" data-scroll-container=>
+            <h2 class="work-title" data-scroll data-scroll-speed="2">My Work</h2>
+            <div class="work-container" data-scroll-container>
+                <div class="work-item" data-scroll-container>
+                    <img src="/Aset/300px-Flagge_Fürstentum_Reuß_ältere_Linie.svg.png" alt="bendjer"  data-scroll data-scroll-speed="4">
+                    <h3 data-scroll data-scroll-speed="4">Work1</h3>
+                    <p data-scroll data-scroll-speed="4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, eius? At, soluta eos? Porro error soluta quisquam voluptatibus temporibus veniam eum. Amet excepturi quia, perferendis facere distinctio eum blanditiis officia.</p>
+                </div>
+
+                <div class="work-item" data-scroll-container>
+                    <img src="/Aset/300px-Flagge_Fürstentum_Reuß_ältere_Linie.svg.png" alt="bendfra" data-scroll data-scroll-speed="2">
+                    <h3 data-scroll data-scroll-speed="2">Work2</h3>   
+                    <p data-scroll data-scroll-speed="2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, natus repudiandae sapiente quasi eaque veniam nisi nihil itaque soluta nostrum porro reprehenderit non optio quam aliquam molestias accusamus possimus quo!</p> 
+               </div>     
+    </section>
+
+    <!-- <section class="bio">
+        <h2 class="biotext">Jojo adalah anak gembala</h2>
+    </section> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
+
+    <script>
+        const scroller = new LocomotiveScroll(
+            {
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+            }
+    );
+            // actt
+        // const text = $('.biotext').text()
+        // const chars = text.split('')
+        // console.log("ini char masih array  \n", chars)
+            // </actt>
+        // const combineChars = chars.join(',')
+        // consloge.log("ini char yang digabung bentuk string", combineChars)
+
+        // chars.map((letterstersplit, index) => {
+        //     console.log(letterstersplit, " ", index)
+        // })
+
+            // actt
+        // const spanText = chars.map((letterstersplit, index) => {
+        //     return '<span data-scroll data-scroll-speed="2" data-scroll-delay="1"' +(index*0.05) +'">'+ letterstersplit + '</span>' 
+        // }).join(' ')
+        // console.log(spanText)
+
+
+        // console.log($('.biotext').html(spanText))
+        // scroller.update()
+            //</actt>
+
+        // $(document).ready(function(){
+        //     const scroll = new LocomotiveScroll({
+        //         el : $("[data-scroll-container]")(0),
+        //         smooth:true
+        //     })
+        // });
+
+    </script>
+
 </body>
+
+</html>
